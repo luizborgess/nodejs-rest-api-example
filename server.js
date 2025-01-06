@@ -12,7 +12,13 @@ app.get('/', function (req, res) {
   console.log(response)
   res.end(JSON.stringify(response))
 })
-
+app.get('/product', function (req, res) {
+  console.log('GET product request received')
+  res.writeHead(200, {'Content-Type': 'application/json'})
+  var response = { "response" : "This is GET method." }
+  console.log(response)
+  res.end(JSON.stringify(response))
+})
 app.get('/:id', function (req, res) {
   console.log('GET /:id request received')
   res.writeHead(200, {'Content-Type': 'application/json'})
